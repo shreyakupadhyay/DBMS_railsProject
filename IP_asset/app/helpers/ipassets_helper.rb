@@ -1,0 +1,2 @@
+module IpassetsHelper
+end

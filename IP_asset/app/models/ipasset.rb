@@ -1,0 +1,2 @@
+class Ipasset < ApplicationRecord
+end

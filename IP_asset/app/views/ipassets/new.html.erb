@@ -1,0 +1,25 @@
+<%= form_for(:ipasset, :url => {:controller => 'ipassets', :action => 'create'}) do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :text %>
+  </p>
+  
+  <p>
+    <%= f.label :binary_data %><br>
+    <%= f.file_field :binary_data %>
+  </p>
+
+  <p>
+    <%= f.label :filename %><br> 
+    <%= f.text_field :filename %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
