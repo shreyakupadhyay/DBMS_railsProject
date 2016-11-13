@@ -1,0 +1,18 @@
+<h1>Listing IP assets</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Filename</th>
+  </tr>
+ 
+  <% @ipasset.each do |ipasset| %>
+    <tr>
+      <td><%= ipasset.title %></td>
+      <td><%= ipasset.description %></td>
+      <td><%= ipasset.filename %></td>
+      <td><%= link_to 'Show', ipasset_path(ipasset) %></td>
+    </tr>
+  <% end %>
+</table>

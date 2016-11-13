@@ -1,4 +1,14 @@
 class IpassetsController < ApplicationController
+  def index
+    @ipasset = Ipasset.all
+  end
+
+
+  def show
+    @ipasset = Ipasset.find(params[:id])
+  end
+
+
   def new 
   end
 
