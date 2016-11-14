@@ -8,6 +8,17 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
+  <p>
+    <%= f.label :faculty %>
+    <%= f.check_box :user_type, {:checked => "faculty"} %> 
+  
+    <%= f.label :collaborator %>
+    <%= f.check_box :user_type, {:checked => "collaborator"} %> 
+  
+    <%= f.label :student %>
+    <%= f.check_box :user_type, {:checked => "student"} %> 
+  </p>
+
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
@@ -21,9 +32,12 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
+
 <% end %>
 
 <%= render "devise/shared/links" %>
