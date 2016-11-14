@@ -10,16 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161113095906) do
+ActiveRecord::Schema.define(version: 20161114070409) do
 
   create_table "ipassets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "title"
     t.text     "description", limit: 65535
     t.string   "filename"
     t.binary   "binary_data", limit: 65535
-    t.integer  "status",                    default: 0
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
+    t.integer  "status",                    default: 0
+  end
+
+  create_table "userips", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "user_id"
+    t.string   "ipasset_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
