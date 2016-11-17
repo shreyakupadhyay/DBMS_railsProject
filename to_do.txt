@@ -1,0 +1,2 @@
+1. Create uuid() for ipassets as ipasset_id
+2. Create uuid() for user table. 

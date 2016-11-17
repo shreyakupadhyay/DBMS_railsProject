@@ -1,0 +1,2 @@
+module IpcommitteeHelper
+end

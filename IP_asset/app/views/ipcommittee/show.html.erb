@@ -1,0 +1,33 @@
+<p>
+  <strong>Title</strong>
+  <%= @ipasset.title %>
+</p>
+
+<p>
+  <strong>Description</strong>
+  <%= @ipasset.description %>
+</p>
+
+<p>
+  <strong>Filename</strong>
+  <%= @ipasset.filename %>
+</p>
+
+<p>
+  <strong>File data</strong>
+  <%= @ipasset.binary_data %>
+</p>
+
+
+<%= form_for(:ipasset, :url => {:controller => 'ipcommittee', :action => 'updatestatus'}) do |f| %>
+
+      <p>
+        <%= f.label :Status %></br>
+        <%= f.collection_radio_buttons(:status, [["1","Accepted"],["-1","Rejected"]], :first, :last ) %>
+      </p>
+
+      <p>
+        <%= f.submit %>
+      </p>
+
+<% end %>
