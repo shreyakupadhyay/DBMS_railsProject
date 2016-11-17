@@ -9,14 +9,8 @@
   </div>
 
   <p>
-    <%= f.label :faculty %>
-    <%= f.check_box :user_type, {:checked => "faculty"} %> 
-  
-    <%= f.label :collaborator %>
-    <%= f.check_box :user_type, {:checked => "collaborator"} %> 
-  
-    <%= f.label :student %>
-    <%= f.check_box :user_type, {:checked => "student"} %> 
+    <%= f.label :Membership %></br>
+    <%= f.collection_radio_buttons(:user_type, [["1","faculty"],["2","collaborator"],["3","student"]], :first, :last ) %>
   </p>
 
   <div class="field">

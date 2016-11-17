@@ -13,7 +13,7 @@ development:
   adapter: mysql2
   database: IP_asset
   username: root
-  password: harika@123
+  password: BlackHole
   host: localhost
   #socket: /tmp/mysql.sock
 
