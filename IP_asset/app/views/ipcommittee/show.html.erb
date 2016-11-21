@@ -23,8 +23,9 @@
 
       <p>
         <%= f.label :Status %></br>
-        <%= f.collection_radio_buttons(:status, [["1","Accepted"],["-1","Rejected"]], :first, :last ) %>
+        <%= f.collection_radio_buttons(:status, [["1","Accepted"],["-1","Rejected"]], :first, :last )%>
       </p>
+        <%= f.hidden_field :id, value: @ipasset.id %>
 
       <p>
         <%= f.submit %>

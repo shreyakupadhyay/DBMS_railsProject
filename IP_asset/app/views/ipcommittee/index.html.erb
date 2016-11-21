@@ -1,5 +1,8 @@
 <h1>Listing IP assets</h1>
- 
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+<i class="em em---1"></i> 
+<link rel="stylesheet" href="css/animations.css">
+<div id="object" class="slideUp">
 <table>
   <tr>
     <th>Title</th>
@@ -12,7 +15,7 @@
       <td><%= ipasset.title %></td>
       <td><%= ipasset.description %></td>
       <td><%= ipasset.filename %></td>
-      <td><%= link_to 'Show', ipasset_path(ipasset) %></td>
+      <td><%= link_to 'Show', review_ip_path(ipasset) %></td>
     </tr>
   <% end %>
 </table>

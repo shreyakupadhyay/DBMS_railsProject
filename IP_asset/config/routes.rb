@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'ipcommittee/show'
   post 'ipcommittee/updatestatus'
   get 'ipcommittee/index'
+  get 'ipcommittee/show/:id',to: "ipcommittee#show" , as: "review_ip"
 	devise_scope :user do
 	  get '/logout',  :to => 'devise/sessions#destroy'
 	end
