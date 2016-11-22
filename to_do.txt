@@ -1,2 +1,6 @@
-1. Create uuid() for ipassets as ipasset_id
-2. Create uuid() for user table. 
+1. Set download button for downloading the pdf file
+2. Set pdf in form of links not in form of binary data.
+3. Whenever there is an update in an ipasset set the status of that ipasset as 0.
+4. Define different views to different users.
+5. Set stakeholders using cookon.
+6. Set proper routes like dashboard in place of /ipassets/.
