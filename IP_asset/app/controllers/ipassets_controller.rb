@@ -34,6 +34,6 @@ class IpassetsController < ApplicationController
   private
 
   def ipasset_params
-    params.require(:ipasset).permit(:title, :description, :binary_data, :filename)
+    params.require(:ipasset).permit(:title, :description, :attachment, :filename , stakeholders_attributes: [:stakeholderid, :stakespercent])
   end
 end

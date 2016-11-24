@@ -8,10 +8,14 @@ Rails.application.routes.draw do
   get 'ipcommittee/show'
   post 'ipcommittee/updatestatus'
   get 'ipcommittee/index'
+  get '/dashboard', :to => 'ipassets#index'
   get 'ipcommittee/show/:id',to: "ipcommittee#show" , as: "review_ip"
-	devise_scope :user do
-	  get '/logout',  :to => 'devise/sessions#destroy'
-	end
+  devise_scope :user do
+      get '/logout',  :to => 'devise/sessions#destroy'
+      get '/login' , :to => 'devise/sessions#new'
+      get '/signup' , :to => 'devise/registrations#new'
+    end
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

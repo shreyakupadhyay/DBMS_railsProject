@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114105008) do
+ActiveRecord::Schema.define(version: 20161122194856) do
 
   create_table "ipassets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "title"
@@ -20,6 +20,22 @@ ActiveRecord::Schema.define(version: 20161114105008) do
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
     t.integer  "status",                    default: 0
+    t.string   "attachment"
+  end
+
+  create_table "owners", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.integer  "ipassetid"
+    t.integer  "userid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stakeholders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.integer  "ipassetid"
+    t.integer  "stakeholderid"
+    t.integer  "stakespercent"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "userips", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|

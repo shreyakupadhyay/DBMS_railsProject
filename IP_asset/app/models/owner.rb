@@ -1,0 +1,5 @@
+class Owner < ApplicationRecord
+
+
+
+end
