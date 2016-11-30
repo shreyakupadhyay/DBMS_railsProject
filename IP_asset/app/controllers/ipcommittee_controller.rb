@@ -1,4 +1,6 @@
 class IpcommitteeController < ApplicationController
+  	before_action :login_required
+
 	def index
 		@ipasset = Ipasset.where(status: 0)
 	end

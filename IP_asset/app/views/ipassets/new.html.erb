@@ -1,4 +1,4 @@
-<%= form_for(Ipasset.new, :url => {:controller => 'ipassets', :action => 'create'}) do |f| %>
+<%= form_for(@ipasset, :url => {:controller => 'ipassets', :action => 'create'}) do |f| %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -34,7 +34,18 @@
   <p><strong>StakeHolders:</strong></p>
     <div id="stakeholders">
       <%= f.fields_for :stakeholders do |stake| %>
+        <div class="nested-fields">
+        <% if stake.object.stakeholderid == current_user.id %>
+          <%= stake.label :stakeholderid %><br>
+          <%= stake.hidden_field :stakeholderid, value: current_user.id %><br>
+
+
+          <%= stake.label :stakespercent %><br>
+          <%= stake.text_field :stakespercent %><br>
+        </div>
+        <% else %>
         <%= render 'stakeholder_fields', :f => stake %>
+        <% end %>
       <% end %>
       <div class="links">
         <%= link_to_add_association 'Add stake', f, :stakeholders %>

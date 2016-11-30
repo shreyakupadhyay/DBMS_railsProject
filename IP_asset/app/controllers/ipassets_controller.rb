@@ -1,6 +1,8 @@
 class IpassetsController < ApplicationController
+  before_action :login_required
+
   def index
-    @ipasset = Ipasset.all
+    @ipasset = current_user.ipassets.all
   end
 
 
@@ -10,6 +12,8 @@ class IpassetsController < ApplicationController
 
 
   def new 
+    @ipasset = Ipasset.new
+    @ipasset.stakeholders.build(stakeholderid: current_user.id)
   end
 
   def edit
