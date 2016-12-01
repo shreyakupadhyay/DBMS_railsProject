@@ -11,9 +11,9 @@ default: &default
 
 development:
   adapter: mysql2
-  database: IP_asset
+  database: final_IP_asset
   username: root
-  password: BlackHole
+  password: harika@123
   host: localhost
   #socket: /tmp/mysql.sock
 

@@ -11,7 +11,7 @@ ActiveAdmin.register_page "Dashboard" do
     end
 
     # Here is an example of a simple dashboard with columns and panels.
-    # #
+    #
     # columns do
     #   column do
     #     panel "Recent Posts" do
@@ -22,7 +22,7 @@ ActiveAdmin.register_page "Dashboard" do
     #       end
     #     end
     #   end
-    # end
+
     #   column do
     #     panel "Info" do
     #       para "Welcome to ActiveAdmin."

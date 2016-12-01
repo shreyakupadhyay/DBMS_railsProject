@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161130135527) do
+ActiveRecord::Schema.define(version: 20161201063829) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "namespace"
@@ -31,11 +31,17 @@ ActiveRecord::Schema.define(version: 20161130135527) do
     t.text     "description", limit: 65535
     t.string   "filename"
     t.binary   "binary_data", limit: 65535
+    t.integer  "status",                    default: 0
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
-    t.integer  "status",                    default: 0
     t.string   "attachment"
-    t.integer  "stakes"
+  end
+
+  create_table "owners", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.integer  "ipassetid"
+    t.integer  "userid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "stakeholders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -68,6 +74,7 @@ ActiveRecord::Schema.define(version: 20161130135527) do
     t.datetime "updated_at",                          null: false
     t.string   "user_type"
     t.integer  "ipcommittee_member",     default: 0
+    t.integer  "status",                 default: 0
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

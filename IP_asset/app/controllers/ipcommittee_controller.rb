@@ -32,7 +32,7 @@ class IpcommitteeController < ApplicationController
 	  logger.info("harika")
 	  @ipasset.status = params[:ipasset][:status].to_i
 	  @ipasset.save
-  	  render :nothing => true
+  	  redirect_to(ipcommittee_index_path)
   	end
 
   	private

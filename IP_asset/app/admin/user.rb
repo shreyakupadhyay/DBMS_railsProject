@@ -17,9 +17,13 @@ index do
   selectable_column
   column :email
   column :status
-   column "Confirmation" do |user|
+  column "Confirming Users" do |user|
+    link_to "Confirm", url_for(:action => :confirm, :id => user.id), :method => :get
+  end
+   column "Enabling IP Committee" do |user|
     link_to "Enable", url_for(:action => :enable, :id => user.id), :method => :get
   end
+
   column "Removal" do |user|
   	link_to "Remove" , url_for(:action => :disable, :id => user.id), :method => :get
   end
@@ -40,6 +44,12 @@ member_action :enable, :method => :get do
     faculty.ipcommittee_member = 1
     faculty.save
   end
+  redirect_to :action => :index
+end
+member_action :confirm, :method => :get do
+  faculty = User.find(params[:id])
+  faculty.status = 1
+  faculty.save
   redirect_to :action => :index
 end
   scope :confirmed_users do |users|
