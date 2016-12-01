@@ -2,7 +2,7 @@ class IpassetsController < ApplicationController
   before_action :login_required
 
   def index
-    @ipasset = current_user.ipassets.all
+  @ipasset = current_user.ipassets.all
   end
 
 
