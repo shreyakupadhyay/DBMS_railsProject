@@ -10,7 +10,8 @@
 
   <p>
     <%= f.label :Membership %></br>
-    <%= f.collection_radio_buttons(:user_type, [["1","faculty"],["2","collaborator"],["3","student"]], :first, :last ) %>
+    <!-- <%= f.collection_radio_buttons(:user_type, [["1","faculty"],["2","collaborator"],["3","student"]], :first, :last ) %> -->
+    <%= f.collection_radio_buttons(:user_type, [["1","faculty"],["2","collaborator"]], :first, :last ) %>
   </p>
 
   <div class="field">

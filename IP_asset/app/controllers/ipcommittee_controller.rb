@@ -1,5 +1,18 @@
 class IpcommitteeController < ApplicationController
-  	before_action :login_required
+  	before_action :login_required , :ipcommittee
+
+	def ipcommittee
+		@user = current_user
+		if(@user.ipcommittee_member == 1)
+			flash[:notice] = "IP committee member"
+		else
+			flash[:notice] = "Not a IP committee member"
+			redirect_to(:root)
+		end
+
+	end
+
+
 
 	def index
 		@ipasset = Ipasset.where(status: 0)
