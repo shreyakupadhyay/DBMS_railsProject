@@ -1,20 +1,281 @@
-<p>
-	<strong>Title</strong>
-	<%= @ipasset.title %>
-</p>
 
-<p>
-	<strong>Description</strong>
-	<%= @ipasset.description %>
-</p>
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Material Admin</title>
+        
+        <!-- Vendor CSS -->
+        <link href="/material/vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+        <link href="/material/vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.css" rel="stylesheet">
+        <link href="/material/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+        <link href="/material/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+        <link href="/material/vendors/bootgrid/jquery.bootgrid.min.css" rel="stylesheet">
 
-<p>
-	<strong>Filename</strong>
-	<%= @ipasset.filename %>
-</p>
 
-<p>
-	<strong>File data</strong>
-	<%= link_to "Download", @ipasset.attachment_url %>
-</p>
+        <!-- CSS -->
+        <link href="/material/css/app.min.1.css" rel="stylesheet">
+        <link href="/material/css/app.min.2.css" rel="stylesheet">
+    </head>
+    <body>
+        <header id="header" class="clearfix" data-current-skin="blue">
+            <ul class="header-inner">
+                <li id="menu-trigger" data-trigger="#sidebar">
+                    <div class="line-wrap">
+                        <div class="line top"></div>
+                        <div class="line center"></div>
+                        <div class="line bottom"></div>
+                    </div>
+                </li>
 
+                <li class="logo hidden-xs">
+                    <a href="index.html">Material Admin</a>
+                </li>
+
+                
+            </ul>
+
+
+            <!-- Top Search Content -->
+            <div id="top-search-wrap">
+                <div class="tsw-inner">
+                    <i id="top-search-close" class="zmdi zmdi-arrow-left"></i>
+                    <input type="text">
+                </div>
+            </div>
+        </header>
+        
+        <section id="main">
+            <aside id="sidebar" class="sidebar c-overflow">
+                <div class="profile-menu">
+                    <a href="">
+                        <div class="profile-pic">
+                            <img src="/material/img/profile-pics/1.jpg" alt="">
+                        </div>
+
+                        <div class="profile-info">
+                            Shreyak Upadhyay
+
+                            <i class="zmdi zmdi-caret-down"></i>
+                        </div>
+                    </a>
+
+                    <ul class="main-menu">
+                        <li>
+                            <a href="profile-about.html"><i class="zmdi zmdi-account"></i> View Profile</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="zmdi zmdi-input-antenna"></i> Privacy Settings</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="zmdi zmdi-settings"></i> Settings</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="zmdi zmdi-time-restore"></i> Logout</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="main-menu">
+                    <li><a href="index.html"><i class="zmdi zmdi-home"></i> Home</a></li>
+                    
+                </ul>
+            </aside>
+           
+            
+
+            <section id="content">
+                <div class="container">
+                    <div class="block-header">
+                        <h2>Data Table</h2>
+                        
+                        <ul class="actions">
+                            <li>
+                                <a href="">
+                                    <i class="zmdi zmdi-trending-up"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="zmdi zmdi-check-all"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="" data-toggle="dropdown">
+                                    <i class="zmdi zmdi-more-vert"></i>
+                                </a>
+                                
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <a href="">Refresh</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Manage Widgets</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Widgets Settings</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                                    
+                    
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Listing IP Assets <small>Ensure that the data attribute [data-identifier="true"] is set on one column header.</small></h2>
+                        </div>
+                        
+                        <table id="data-table-command" class="table table-striped table-vmiddle">
+                            <thead>
+                                <tr>
+                                    <th data-column-id="id" data-type="numeric">Title</th>
+                                    <th data-column-id="sender">Description</th>
+                                    <th data-column-id="received" data-order="desc">Filename</th>
+                                    <th data-column-id="commands" data-formatter="commands" data-sortable="false">File Data</th>
+                                </tr>
+                            </thead>
+                             
+
+                            <tbody>
+                                
+                                         
+                                <tr>
+                                    <td><%= @ipasset.title %></td>
+                                    <td><%= @ipasset.description %></td>
+                                    <td><%= @ipasset.filename %></td>
+                                    <td><%= link_to "Download File", @ipasset.attachment_url %></td>
+
+                                  </tr>
+                                
+                                <p>
+	
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </section>
+        
+        <footer id="footer">
+            Copyright &copy; 2015 Material Admin
+            
+            <ul class="f-menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">Dashboard</a></li>
+                <li><a href="">Reports</a></li>
+                <li><a href="">Support</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </footer>
+
+        <!-- Page Loader -->
+        <div class="page-loader">
+            <div class="preloader pls-blue">
+                <svg class="pl-circular" viewBox="25 25 50 50">
+                    <circle class="plc-path" cx="50" cy="50" r="20" />
+                </svg>
+
+                <p>Please wait...</p>
+            </div>
+        </div>
+
+        <!-- Older IE warning message -->
+        <!--[if lt IE 9]>
+            <div class="ie-warning">
+                <h1 class="c-white">Warning!!</h1>
+                <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+                <div class="iew-container">
+                    <ul class="iew-download">
+                        <li>
+                            <a href="http://www.google.com/chrome/">
+                                <img src="img/browsers/chrome.png" alt="">
+                                <div>Chrome</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.mozilla.org/en-US/firefox/new/">
+                                <img src="img/browsers/firefox.png" alt="">
+                                <div>Firefox</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.opera.com">
+                                <img src="img/browsers/opera.png" alt="">
+                                <div>Opera</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.apple.com/safari/">
+                                <img src="img/browsers/safari.png" alt="">
+                                <div>Safari</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                                <img src="img/browsers/ie.png" alt="">
+                                <div>IE (New)</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p>Sorry for the inconvenience!</p>
+            </div>   
+        <![endif]-->
+
+        <!-- Javascript Libraries -->
+        <script src="/material/vendors/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="/material/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        
+        <script src="/material/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="/material/vendors/bower_components/Waves/dist/waves.min.js"></script>
+        <script src="/material/vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+        <script src="/material/vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>  
+        <script src="/material/vendors/bootgrid/jquery.bootgrid.updated.min.js"></script>
+        
+        <!-- Placeholder for IE9 -->
+        <!--[if IE 9 ]>
+            <script src="/material/vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+        <![endif]-->
+        
+        <script src="/material/js/functions.js"></script>
+        <script src="/material/js/demo.js"></script>
+
+        <!-- Data Table -->
+        <script type="text/javascript">
+            $(document).ready(function(){
+                //Basic Example
+                $("#data-table-basic").bootgrid({
+                    css: {
+                        icon: 'zmdi icon',
+                        iconColumns: 'zmdi-view-module',
+                        iconDown: 'zmdi-expand-more',
+                        iconRefresh: 'zmdi-refresh',
+                        iconUp: 'zmdi-expand-less'
+                    },
+                });
+                
+                //Selection
+                $("#data-table-selection").bootgrid({
+                    css: {
+                        icon: 'zmdi icon',
+                        iconColumns: 'zmdi-view-module',
+                        iconDown: 'zmdi-expand-more',
+                        iconRefresh: 'zmdi-refresh',
+                        iconUp: 'zmdi-expand-less'
+                    },
+                    selection: true,
+                    multiSelect: true,
+                    rowSelect: true,
+                    keepSelection: true
+                });
+                
+            });
+        </script>
+    </body>
+  </html>
