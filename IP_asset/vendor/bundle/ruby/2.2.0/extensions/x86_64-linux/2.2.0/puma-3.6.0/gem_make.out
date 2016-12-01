@@ -1,0 +1,25 @@
+current directory: /home/samyak/Shreyak/final/DBMS_railsProject/IP_asset/vendor/bundle/ruby/2.2.0/gems/puma-3.6.0/ext/puma_http11
+/usr/bin/ruby2.2 -r ./siteconf20161201-11480-dkxmy.rb extconf.rb
+checking for BIO_read() in -lcrypto... yes
+checking for SSL_CTX_new() in -lssl... yes
+checking for openssl/bio.h... yes
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /home/samyak/Shreyak/final/DBMS_railsProject/IP_asset/vendor/bundle/ruby/2.2.0/extensions/x86_64-linux/2.2.0/puma-3.6.0/mkmf.log
+
+current directory: /home/samyak/Shreyak/final/DBMS_railsProject/IP_asset/vendor/bundle/ruby/2.2.0/gems/puma-3.6.0/ext/puma_http11
+make "DESTDIR=" clean
+
+current directory: /home/samyak/Shreyak/final/DBMS_railsProject/IP_asset/vendor/bundle/ruby/2.2.0/gems/puma-3.6.0/ext/puma_http11
+make "DESTDIR="
+compiling mini_ssl.c
+compiling puma_http11.c
+compiling http11_parser.c
+compiling io_buffer.c
+linking shared-object puma/puma_http11.so
+
+current directory: /home/samyak/Shreyak/final/DBMS_railsProject/IP_asset/vendor/bundle/ruby/2.2.0/gems/puma-3.6.0/ext/puma_http11
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 puma_http11.so ./.gem.20161201-11480-bwjgnm/puma
